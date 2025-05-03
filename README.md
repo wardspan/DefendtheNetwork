@@ -12,6 +12,7 @@ Inspired by real-world network defense scenarios, this simulation uses different
 This project is built on the Lotka-Volterra equations:
 
 dx/dt = αx - βxy
+
 dy/dt = δxy - γy
 
 Where:
