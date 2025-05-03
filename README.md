@@ -11,20 +11,16 @@ Inspired by real-world network defense scenarios, this simulation uses different
 
 This project is built on the Lotka-Volterra equations:
 
-\[
-\frac{dx}{dt} = \alpha x - \beta x y
-\]
-\[
-\frac{dy}{dt} = \delta x y - \gamma y
-\]
+dx/dt = αx - βxy
+dy/dt = δxy - γy
 
 Where:
 - `x(t)`: Defender population
 - `y(t)`: Attacker population
-- `\alpha`: Defender growth rate
-- `\beta`: Attack surface exploitation rate
-- `\delta`: Attacker reproduction from successful exploits
-- `\gamma`: Attacker decay rate
+- `α`: Defender growth rate
+- `β`: Attack surface exploitation rate
+- `δ`: Attacker reproduction from successful exploits
+- `γ`: Attacker decay rate
 
 ## 🚀 How to Run
 
