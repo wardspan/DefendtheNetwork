@@ -1,67 +1,110 @@
+# 🛡️ Defend the Network: A Cybersecurity Simulation using Lotka-Volterra Dynamics
 
-# Defend the Network
-
-An interactive MATLAB-based simulation that models attacker vs. defender dynamics in cybersecurity using the classic Lotka-Volterra predator-prey equations.
-
-## 📘 Project Overview
-
-Inspired by real-world network defense scenarios, this simulation uses differential equations to visualize how defenders (Blue Team) and attackers (Red Team) interact over time. The attacker adapts and escalates threats, while the defender adjusts resources and countermeasures. The simulation plots population dynamics and includes features like evolving AI behavior, breach alerts, and a system health meter.
-
-## 🔬 Mathematical Model
-
-This project is built on the Lotka-Volterra equations:
-
-dx/dt = αx - βxy
-
-dy/dt = δxy - γy
-
-Where:
-- `x(t)`: Defender population
-- `y(t)`: Attacker population
-- `α`: Defender growth rate
-- `β`: Attack surface exploitation rate
-- `δ`: Attacker reproduction from successful exploits
-- `γ`: Attacker decay rate
-
-## 🚀 How to Run
-
-1. Open `app/DefendTheNetwork.mlapp` in MATLAB App Designer.
-2. Run the app.
-3. Adjust the sliders to change defender parameters.
-4. Click `Run Simulation` to watch how the system evolves.
-
-## 🧠 Features
-
-- Real-time ODE solving with `ode45`
-- Adjustable defender parameters
-- Evolving/random attacker behavior
-- Live population plot (Defenders vs. Attackers)
-- Breach detection and system status indicator (WIP)
-- Expandable to include decision-making and missions
-
-## 🗂️ Project Structure
-
-```
-DefendTheNetwork/
-├── app/
-│   └── DefendTheNetwork.mlapp
-├── src/
-│   ├── lv_simulation.m
-│   ├── attacker_ai.m
-│   └── health_status.m
-├── assets/
-│   └── screenshots/
-├── README.md
-├── .gitignore
-└── LICENSE (optional)
-```
-
-## 📚 References
-
-- Lotka, A. J. *Elements of Physical Biology*. 1925.
-- Strogatz, S. H. *Nonlinear Dynamics and Chaos*. Westview Press, 2014.
-- MathWorks Documentation: [ode45](https://www.mathworks.com/help/matlab/ref/ode45.html)
+**Author**: Ward Spangenberg  
+**Course**: Differential Equations - MA211-700, Spring 2025  
+**Status**: In Development
 
 ---
 
-© 2025 Ward Spangenberg. Built as part of a Differential Equations course project.
+## 📘 Project Overview
+
+_Defend the Network_ is an interactive simulation built in MATLAB App Designer that visualizes cyber attack-defense dynamics using the classical Lotka-Volterra predator-prey model. By reinterpreting the predator as **attackers** and the prey as **defenders**, the simulation provides an intuitive and engaging metaphor for real-world cybersecurity battles.
+
+Users can adjust system parameters such as defender growth rate and attacker burnout to observe how strategies affect long-term survival, escalation, or breaches. The simulation is geared toward education, cyber training, and demonstrating complex differential equations in an applied and visual way.
+
+---
+
+## 📊 The Mathematical Model
+
+This simulation is governed by the Lotka-Volterra equations:
+
+```
+dx/dt = αx - βxy  
+dy/dt = δxy - γy
+```
+
+### Variable Mapping:
+- **x(t)**: Defender population (interpreted as firewalls, analysts, response systems)
+- **y(t)**: Attacker population (interpreted as threat actors, malware, exploits)
+
+### Parameters:
+- **α** – Defender growth rate (resource scaling)
+- **β** – Attack surface vulnerability (how often attackers succeed)
+- **δ** – Attacker adaptation rate (how fast they improve after success)
+- **γ** – Attacker burnout rate (natural decay when thwarted)
+
+---
+
+## ✅ Current Functionality
+
+| Feature | Why It’s Valuable |
+|--------|--------------------|
+| 🎮 UI Sliders for α and γ | Lets users simulate resource scaling vs. attacker fatigue |
+| 📊 Dynamic Plotting | Real-time animation of attacker vs defender populations |
+| 📋 Data Table | Displays population values and derivatives for analysis |
+| 🚦 Network Health Lamp | Color-coded lamp visually communicates simulation outcome |
+| 📈 Gauges | Semicircular gauges represent live attacker/defender strength |
+| 🎯 Difficulty Modes | Easy, Medium, Hard adjust β and δ for attacker behavior |
+| 📅 Time Tracker | Live time counter during simulation |
+| 🧠 Educational Overlay | Info button explains model assumptions and variable mapping |
+| 🔄 Responsive UI | Layout adapts to screen width automatically |
+| 📝 Final Outcome Summary | Reports final network status: secure, breached, or contested |
+
+---
+
+## 🔜 Planned Features (Coming Soon)
+
+| Feature | Description |
+|--------|-------------|
+| 🔀 Overlay Nullclines + Fixed Point | Visual aid for system equilibrium analysis |
+| 🎛️ Live Parameter Display | α, β, γ, δ values displayed live during simulation |
+| 🧾 Narrative Summary | Story-like outcome description based on final state |
+
+---
+
+## ▶️ How to Run
+
+1. **Requirements**:
+   - MATLAB R2021a or later
+   - App Designer
+   - No external toolboxes required
+
+2. **Launch Instructions**:
+   - Open `DefendTheNetwork.mlapp` in MATLAB App Designer
+   - Click **Run**
+   - Adjust sliders and dropdowns, then click **Run Simulation**
+
+3. **Alternate Method** (if modularized):
+   - Run `main_app_launcher.m` if provided
+   - Ensure `src/` directory is on MATLAB path
+
+---
+
+## 📁 Project Structure
+
+```
+DefendTheNetwork/
+├── DefendTheNetwork.mlapp       # Main App Designer file
+├── README.md                    # Project documentation
+├── src/
+│   ├── lv_simulation.m          # ODE logic and solution wrapper
+│   ├── attacker_ai.m            # Attacker behavior parameter config
+│   └── health_status.m          # Status color & label utilities
+└── assets/                      # Optional images or icons
+```
+
+---
+
+## 📚 References
+
+1. Lotka, A. J. (1925). *Elements of Physical Biology*.  
+2. Volterra, V. (1926). *Fluctuations in the abundance of a species considered mathematically*.  
+3. MIT OpenCourseWare: Differential Equations Lecture Series.  
+4. MATLAB Documentation: [ode45](https://www.mathworks.com/help/matlab/ref/ode45.html)
+
+---
+
+## 📜 License & Attribution
+
+© 2025 Ward Spangenberg.  
+Built as part of a Differential Equations course project.
