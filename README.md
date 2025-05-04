@@ -6,15 +6,16 @@
 
 ---
 
-## 📘 Project Overview
+## 📌 Project Overview
 
 _Defend the Network_ is an interactive simulation built in MATLAB App Designer that visualizes cyber attack-defense dynamics using the classical Lotka-Volterra predator-prey model. By reinterpreting the predator as **attackers** and the prey as **defenders**, the simulation provides an intuitive and engaging metaphor for real-world cybersecurity battles.
 
 Users can adjust system parameters such as defender growth rate and attacker burnout to observe how strategies affect long-term survival, escalation, or breaches. The simulation is geared toward education, cyber training, and demonstrating complex differential equations in an applied and visual way.
 
+![Simulation Screenshot](assets/screenshots/main_ui.png)
 ---
 
-## 📊 The Mathematical Model
+## 🧰 The Mathematical Model
 
 This simulation is governed by the Lotka-Volterra equations:
 
@@ -62,21 +63,36 @@ dy/dt = δxy - γy
 
 ---
 
+## 💡 Cybersecurity Industry Implications
+
+This simulation isn't just a classroom exercise—it maps directly to real-world cyber defense:
+
+1. **Dynamic Security**: Shows cyber risk as a system, not a snapshot.
+1. **Burnout & Fatigue**: Models attacker resource constraints and defender overload.
+1. **APTs & Evolution**: Future support for evolutionary AI attackers mirrors real-world persistent threats.
+1. **Policy Tuning**: Parameters act as levers (budget, hygiene, AI threat level, etc.)—a new way to think about strategy.
+1. **Predictive Risk**: Ingest threat intel and simulate outcomes, providing more accurate cyber forecasting.
+
+🚀 This project reframes cybersecurity defense from “ **build a wall and hope** ” to “ **model a system and be prepared.** ”
+
+---
+
+## ✅ Requirements
+
+- MATLAB R2020a or newer (App Designer support)
+- No external toolboxes required
+
+---
+
 ## ▶️ How to Run
 
-1. **Requirements**:
-   - MATLAB R2021a or later
-   - App Designer
-   - No external toolboxes required
-
-2. **Launch Instructions**:
-   - Open `DefendTheNetwork.mlapp` in MATLAB App Designer
-   - Click **Run**
-   - Adjust sliders and dropdowns, then click **Run Simulation**
-
-3. **Alternate Method** (if modularized):
-   - Run `main_app_launcher.m` if provided
-   - Ensure `src/` directory is on MATLAB path
+1. Open `DefendTheNetwork.mlapp` in MATLAB App Designer.
+2. Make sure the `+src` folder is in your current MATLAB path:
+   ```matlab
+   addpath(genpath('path_to/DefendTheNetwork/+src'));
+   ```
+3. Click **Run** to launch the app.
+4. Adjust sliders and difficulty, then hit **Run Simulation**.
 
 ---
 
@@ -86,12 +102,34 @@ dy/dt = δxy - γy
 DefendTheNetwork/
 ├── DefendTheNetwork.mlapp       # Main App Designer file
 ├── README.md                    # Project documentation
-├── src/
-│   ├── lv_simulation.m          # ODE logic and solution wrapper
+├── +src/
+│   ├── simulate_lv_dynamics.m   # ODE logic and solution wrapper
 │   ├── attacker_ai.m            # Attacker behavior parameter config
 │   └── health_status.m          # Status color & label utilities
 └── assets/                      # Optional images or icons
 ```
+
+---
+## 🔄 Refactoring Note
+
+As of the latest version, **all major simulation logic has been moved out of the app and into modular files** under the `+src` folder:
+
+| Feature                     | Old Location                      | New Location               |
+|----------------------------|-----------------------------------|----------------------------|
+| Lotka-Volterra simulation  | Inside App logic                  | `+src/simulate_lv_dynamics.m` |
+| Difficulty behavior tuning | Inline conditional logic          | `+src/attacker_ai.m`       |
+| Final network assessment   | End-of-loop calculations in app   | `+src/health_status.m`     |
+
+This separation of concerns makes the system **cleaner, testable, and more maintainable**.
+
+---
+## 📬 Feedback or Ideas?
+
+Feel free to open an issue or drop a suggestion if you’d like to:
+
+- Add new scenarios
+- Convert this into a web app (*might do this using NodeJS*)
+- Integrate real-world threat intelligence feeds
 
 ---
 
@@ -103,8 +141,10 @@ DefendTheNetwork/
 4. MATLAB Documentation: [ode45](https://www.mathworks.com/help/matlab/ref/ode45.html)
 
 ---
+## 🧑‍💻 Author
 
-## 📜 License & Attribution
+**Ward Spangenberg**  
+Cybersecurity strategist, student, and builder of simulations.  
+[LinkedIn →](https://www.linkedin.com/in/wardspan/)
 
-© 2025 Ward Spangenberg.  
-Built as part of a Differential Equations course project.
+Built for the Differential Equations - MA211-700 course project.

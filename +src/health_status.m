@@ -27,10 +27,10 @@ function [finalLiveStatus, finalStatus, finalColor] = health_status(pop)
     finalDefenders = pop(end,2);
 
     if finalDefenders > finalAttackers * 1.5
-        finalLiveStatus = '🟢 Status: Holding';
+        finalLiveStatus = '🟢 Current Status: Holding';
     elseif finalAttackers > finalDefenders * 1.5
-        finalLiveStatus = '🔴 Status: Under Attack';
+        finalLiveStatus = '🔴 Current Status: Under Attack';
     else
-        finalLiveStatus = '🟡 Status: Contested';
+        finalLiveStatus = '🟡 Current Status: Contested';
     end
 end

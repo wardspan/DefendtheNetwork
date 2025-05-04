@@ -1,5 +1,5 @@
 function [beta, delta] = attacker_ai(difficulty)
-%ATTACKER_AI Returns beta and delta based on difficulty level.
+%get_attacker_params Returns beta and delta based on difficulty level.
 %   [beta, delta] = attacker_ai(difficulty) returns the attack rate (beta)
 %   and conversion efficiency (delta) depending on the selected difficulty level.
 
