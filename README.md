@@ -35,31 +35,53 @@ dy/dt = δxy - γy
 - **γ** – Attacker burnout rate (natural decay when thwarted)
 
 ---
+## 📘 Nullclines & Equilibrium Explanation
 
-## ✅ Current Functionality
-
-| Feature | Why It’s Valuable |
-|--------|--------------------|
-| 🎮 UI Sliders for α and γ | Lets users simulate resource scaling vs. attacker fatigue |
-| 📊 Dynamic Plotting | Real-time animation of attacker vs defender populations |
-| 📋 Data Table | Displays population values and derivatives for analysis |
-| 🚦 Network Health Lamp | Color-coded lamp visually communicates simulation outcome |
-| 📈 Gauges | Semicircular gauges represent live attacker/defender strength |
-| 🎯 Difficulty Modes | Easy, Medium, Hard adjust β and δ for attacker behavior |
-| 📅 Time Tracker | Live time counter during simulation |
-| 🧠 Educational Overlay | Info button explains model assumptions and variable mapping |
-| 🔄 Responsive UI | Layout adapts to screen width automatically |
-| 📝 Final Outcome Summary | Reports final network status: secure, breached, or contested |
+- **Nullcline (`dx/dt = 0`)**: Where attacker population stops changing
+- **Nullcline (`dy/dt = 0`)**: Where defender population stops changing
+- **Equilibrium Point**: Where both attacker and defender populations stabilize — often marks a critical turning point in the simulation dynamics
 
 ---
 
-## 🔜 Planned Features (Coming Soon)
+## 🔧 Features
 
-| Feature | Description |
-|--------|-------------|
-| 🔀 Overlay Nullclines + Fixed Point | Visual aid for system equilibrium analysis |
-| 🎛️ Live Parameter Display | α, β, γ, δ values displayed live during simulation |
-| 🧾 Narrative Summary | Story-like outcome description based on final state |
+### 📊 Simulation Core
+- **Lotka-Volterra Dynamics**: Models attackers vs. defenders using differential equations.
+- **Adjustable Parameters**:
+  - **Defender Growth Rate (α)** via slider
+  - **Attacker Burnout Rate (γ)** via slider
+  - **Attacker Behavior** based on difficulty selection (Easy, Medium, Hard)
+- **Preset Scenarios** to model real-world threat environments
+
+### 🕹️ User Interface
+- **Interactive Sliders**: Control system dynamics with real-time visual feedback.
+- **Live Plotting**: Animated attacker and defender population chart over time.
+- **Data Table**: Shows current values of attacker (x), defender (y), and Δx/Δy over time.
+- **Gauges**: Show population values of attackers and defenders (capped at 100).
+- **Status Lamp**: Reflects network health in real time.
+
+### 🧮 Advanced Analysis
+- **Toggleable Nullclines & Equilibrium**:
+  - `dx/dt = 0` and `dy/dt = 0` lines overlaid on the simulation
+  - Equilibrium point marked and annotated on the plot
+- **Parameter Display**: Shows α, β, γ, and δ values during the run
+
+### 🧾 Briefing
+- A popup briefing appears on app launch providing a “cyber defense mission” narrative
+- Explains the simulation objectives and mechanics
+
+![Simulation Screenshot](assets/screenshots/startup.png)
+
+### 🧠 Learn More Panel
+- Popup with an educational breakdown of:
+  - Predator-prey equations and their cybersecurity mapping
+  - Role of attackers, defenders, burnout, and engagement
+  - Explanation of nullclines and equilibrium in this context
+
+![Simulation Screenshot](assets/screenshots/learnmore.png)
+
+### 🧯 Outcome Narratives
+- Summary generation at the end of each simulation with debrief-style feedback depending on success, failure, or contested outcomes.
 
 ---
 
@@ -146,5 +168,3 @@ Feel free to open an issue or drop a suggestion if you’d like to:
 **Ward Spangenberg**  
 Cybersecurity strategist, student, and builder of simulations.  
 [LinkedIn →](https://www.linkedin.com/in/wardspan/)
-
-Built for the Differential Equations - MA211-700 course project.
